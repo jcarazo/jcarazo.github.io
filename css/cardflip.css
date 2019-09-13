@@ -1,0 +1,196 @@
+/* Visit https://nicolaskadis.info/projects/pure-css-flip-cards-using-bootstrap-4-and-css-grid-no-js for an explanation */
+
+/* for demo purposes */
+.card {
+  margin: 10px 10px;
+}
+
+/* Flip Cards CSS */
+.card-container {
+  display: grid;
+  perspective: 700px;
+}
+
+.card-flip {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+
+.card-flip div {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.front {
+  grid-area: frontAndBack;
+  display: block;
+}
+
+.back {
+  grid-area: frontAndBack;
+  -webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+
+.card-container.hover .card-flip {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+.footer-back {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+2,131313+49,39578c+68,000000+89,131313+100 */
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    #000000 2%,
+    #131313 49%,
+    #39578c 68%,
+    #000000 89%,
+    #131313 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #000000 2%,
+    #131313 49%,
+    #39578c 68%,
+    #000000 89%,
+    #131313 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #000000 2%,
+    #131313 49%,
+    #39578c 68%,
+    #000000 89%,
+    #131313 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#131313',GradientType=1 ); /* IE6-9 */
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.cloud{
+  width: 358px; 
+  margin-top: 48px; 
+  margin-left: 17px;
+}
+
+@media (min-width: 600px) {
+  .height {
+    height: 400px;
+  }
+
+  .height.adapt {
+    height: 430px;
+  }
+
+
+}
+
+@media (max-width: 600px) {
+  .height {
+    height: 320px;
+  }
+  .height.adapt {
+    height: 350px;
+  }
+
+}
+
+@media (min-width: 450px) and (max-width: 500px) {
+  .height {
+    height: 370px;
+  }
+  .height.adapt {
+    height: 400px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .height {
+    height: 400px;
+  }
+  .height.adapt {
+    height: 420px;
+  }  
+}
+
+@media (min-width: 200px) and (max-width: 449px) {
+    .height {
+      height: 300px;
+    }
+    .height.adapt {
+      height: 330px;
+    }    
+    .cloud.adapt{
+      width: 286px;
+      margin-top: 48px;
+      margin-left: 36px;        
+    }     
+}
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        .height {
+            height: 300px;
+          } 
+        .height.adapt {
+            height: 320px;
+        }   
+        .cloud.adapt{
+          width: 315px;
+          margin-top: 48px;
+          margin-left: 28px;          
+        }              
+}
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 667px) 
+    and (-webkit-device-pixel-ratio : 2) { 
+        .height {
+            height: 300px;
+          }   
+          .height.adapt {
+            height: 320px;
+          }          
+          .cloud.adapt{
+            width: 304px;
+            margin-top: 48px;
+            margin-left: 33px;          
+          }                        
+}
+
+@media only screen 
+    and (device-width : 414px) 
+    and (device-height : 736px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        .height {
+            height: 310px;
+          }  
+          .height.adapt {
+            height: 330px;
+          }     
+          .cloud.adapt{
+            width: 315px;
+            margin-top: 48px;
+            margin-left: 28px;          
+          }                             
+}
